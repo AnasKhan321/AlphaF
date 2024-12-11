@@ -132,7 +132,7 @@ export default function Chat({ id }: { id: string }) {
         Room ID: {id}
       </div>
 
-      <div className="min-h-[650px] max-h-[650px] overflow-y-scroll w-[70%] mx-auto border border-purple-500 p-4 rounded-lg">
+      <div className="min-h-[650px] max-h-[650px] overflow-y-scroll w-[90%] md:w-[70%] mx-auto border border-purple-500 p-4 rounded-lg">
         {messages.map((message) => (
           <div key={message.id}>
             {message.messagetype === MessageType.Join && (
@@ -192,7 +192,7 @@ export default function Chat({ id }: { id: string }) {
         ))}
       </div>
 
-      <div className="w-[70%] mx-auto">
+      <div className=" w-[90%] md:w-[70%] mx-auto">
         <form onSubmit={sendMessage} className="flex gap-2 mt-4">
           <input
             type="file"

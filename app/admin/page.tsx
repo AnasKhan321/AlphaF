@@ -69,10 +69,10 @@ export default function AdminPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#13111C] to-purple-900 p-8">
-      <Card className="w-full max-w-4xl mx-auto bg-white/10 backdrop-blur-md border-purple-500/20">
+      <Card className="w-full  w-full md:max-w-4xl mx-auto bg-white/10 backdrop-blur-md border-purple-500/20">
         <CardHeader>
-          <CardTitle className="text-3xl font-bold text-white flex items-center justify-center gap-2">
-            <ShieldCheck className="h-8 w-8 text-pink-500" />
+          <CardTitle className=" text-md  md:text-3xl font-bold text-white flex items-center justify-center gap-2">
+            <ShieldCheck className=" h-4 w-4  md:h-8 md:w-8 text-pink-500" />
             Admin Dashboard
           </CardTitle>
         </CardHeader>
@@ -87,11 +87,11 @@ export default function AdminPage() {
                       <AvatarFallback>{user.name.charAt(0)}</AvatarFallback>
                     </Avatar>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">{user.name}</h3>
-                      <p className="text-sm text-purple-200">{user.email}</p>
+                      <h3 className=" text-sm  md:text-lg font-semibold text-white">{user.name}</h3>
+                      <p className=" text-xs md:text-sm text-purple-200">{user.email}</p>
                     </div>
                   </div>
-                  <div className="flex items-center space-x-2">
+                  <div className=" hidden md:flex items-center space-x-2">
                     <Switch
                       checked={!user.isRestricted}
                       onCheckedChange={() => handleToggleRestriction(user.email, user.isRestricted)}
@@ -99,9 +99,9 @@ export default function AdminPage() {
                     />
                     <span className="text-sm text-purple-200">
                       {user.isRestricted ? (
-                        <ShieldAlert className="h-5 w-5 text-pink-500" />
+                        <ShieldAlert className=" h-2 w-2  md:h-5 md:w-5 text-pink-500" />
                       ) : (
-                        <ShieldCheck className="h-5 w-5 text-green-500" />
+                        <ShieldCheck className="h-2 w-2  md:h-5 md:w-5 text-green-500" />
                       )}
                     </span>
                     <Button
@@ -110,7 +110,7 @@ export default function AdminPage() {
                       onClick={() => handleRemoveUser(user.id)}
                       className="bg-red-500 hover:bg-red-600"
                     >
-                      <Trash2 className="h-4 w-4" />
+                      <Trash2 className="h-2 w-2  md:h-4 md:w-4" />
                     </Button>
                   </div>
                 </CardContent>
