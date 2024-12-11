@@ -36,7 +36,7 @@ export default function Chat({ id }: { id: string }) {
   const [fileurl , setfileurl]  = useState("")
 
   useEffect(() => {
-    const so = io("ws://d9ay5rmqf0duw.cloudfront.net")
+    const so = io("https://d9ay5rmqf0duw.cloudfront.net")
     setSocket(so)
 
     so.emit("roomjoin", { id, email: session?.user?.email })
